@@ -1,8 +1,3 @@
-export type PostHome = {
-    date: string
-    title: string
-}
-
 export type Post = {
     title: string
     message: string

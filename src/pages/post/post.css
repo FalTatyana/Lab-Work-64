@@ -1,0 +1,52 @@
+.bi-calendar4-week {
+    color: #837ADA;
+    font-size: 13px;
+}
+
+.postDate {
+    font-size: 10px;
+}
+
+.postTitle {
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.postText {
+    background-color: #101123;
+    border-left: 2px solid #837ADA;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.postBtn {
+    padding: 10px 25px;
+    margin-right: 20px;
+    border-radius: 10px;
+    background-color: #0C0D1B;
+}
+
+.postBtn:hover {
+    border: 1px solid rgb(198, 198, 198);
+    color: rgb(198, 198, 198);
+}
+
+.postButtons {
+    display: inline-block;
+    float: right;
+}
+
+.postBtnEdit {
+    border: 1px solid #837ADA;
+    color: #837ADA;
+    margin-top: 20px;
+}
+
+.postBtnDelete {
+    border: 1px solid #CA3D62;
+    color: #CA3D62;
+}
