@@ -1,16 +1,26 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import './post.css'
 import type { PostApi } from '../../type'
+import { useEffect, useState } from 'react'
+import axiosApi from '../../axiosApi'
 
-interface Props {
-  post: PostApi
-}
+const Post = () => {
 
-const Post = ({post}: Props) => {
+  const { id } = useParams();
+  const [post, setPost] = useState<PostApi | null>(null);
+
+  useEffect(() => {
+    const fetchPost = async() => {
+      const {data} = await axiosApi<PostApi>(`/posts/${id}.json`);
+
+      setPost(data);
+    };
+    void fetchPost();
+  },[id]);
 
   const navigate = useNavigate();
 
-  return (
+  return post && (
     <div className='post container'>
         <div className="postContent">
         <h3 className='postTitle'>{post.title}</h3>

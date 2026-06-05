@@ -1,16 +1,36 @@
+import { useNavigate } from 'react-router-dom'
 import type { PostApi, PostList } from '../../type'
 import './PostCard.css'
+import { useEffect, useState } from 'react'
+import axiosApi from '../../axiosApi'
 
-interface Props {
-    posts: PostApi[];
-    onOpen: (post: PostApi) => void;
-  }
+const PostCard = () => {
 
-const PostCard = ({ posts, onOpen }: Props) => {
+    const [post, setPost] = useState<PostApi[]>([]);
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            const { data } = await axiosApi.get<PostList>('/posts.json')
+
+            const posts: PostApi[] = Object.keys(data).map(key => {
+                return {
+                    id: key,
+                    title: data[key].title,
+                    message: data[key].message,
+                    date: new Date().toLocaleDateString('ru-RU')
+                }
+            });
+            setPost(posts);
+        }
+        void fetchPosts();
+    }, []);
+
     return (
         <>
             <div className="postCardWrapper">
-                {posts.map(p => (
+                {post.map(p => (
                     <div className='postCard' key={p.id}>
                         <div className="cardContent">
                             <h3 className='cardTitle'>{p.title}</h3>
@@ -19,7 +39,7 @@ const PostCard = ({ posts, onOpen }: Props) => {
                             </span>
                         </div>
                         <div className="cardBtnWrapper">
-                            <button className='cardBtn' onClick={() => onOpen(p)}>Read more <i className="bi bi-arrow-right"></i></button>
+                            <button className='cardBtn' onClick={() => navigate(`/posts/${p.id}`)}>Read more <i className="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
                 ))};
