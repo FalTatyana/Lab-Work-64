@@ -1,18 +1,47 @@
 .postCard {
-    width: 500px;
+    width: 700px;
     padding: 20px;
     background-color: #101123;
     border-left: 2px solid #837ADA;
     border-radius: 15px;
-    margin-top: 20px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cardDate {
-    display: block;
-    text-align: right;
     font-size: 10px;
 }
 
 .cardTitle {
     margin-bottom: 20px;
+}
+
+.cardMessage {
+    margin-bottom: 20px;
+}
+
+.cardBtn {
+    width: 120px;
+    color: #837ADA;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 200;
+    border: 1px solid #837ADA;
+    border-radius: 15px;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.cardBtn:hover {
+    color: rgb(198, 198, 198);
+    border: 1px solid rgb(198, 198, 198);
+}
+
+.bi-arrow-right {
+    font-size: 18px;
 }

@@ -1,0 +1,32 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 30px auto;
+    background-color: #101123;
+    border-right: 2px solid #837ADA;
+    border-left: 2px solid #837ADA;
+}
+
+.inputTitle, .textarea {
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    border: none;
+    background-color: #1C1E2B;
+    color: rgb(198, 198, 198);;
+}
+
+.formTitle {
+    margin: 0 0 10px 0;
+}
+
+.bi-asterisk {
+    color: red;
+    font-size: 8px;
+}
+
+.textarea {
+    height: 100px;
+}

@@ -7,12 +7,12 @@ interface Props {
 
 const Home = ({ children }: Props) => {
     return (
-        <div className="promo container">
-            <div className="promoTitle">
+        <div className="home container">
+            <div className="homeTitle">
                 <h3 className='postsTitle'> <i className="bi bi-postcard"></i> Latest Posts</h3>
                 <span>Thoughts, stories and ideas <i className="bi bi-chat-heart"></i></span>
             </div>
-            <div className="post">
+            <div className="posts">
                 {children}
             </div>
         </div>

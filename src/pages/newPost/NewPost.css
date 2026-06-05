@@ -1,0 +1,19 @@
+.btnNewPostSave {
+    padding: 10px 20px;
+    background-color: #101123;
+    border: 1px solid #837ADA;
+    color: #837ADA;
+    border-radius: 10px;
+}
+
+.btnNewPostSave:hover {
+    color: rgb(198, 198, 198);
+    border: 1px solid rgb(198, 198, 198);
+    cursor: pointer;
+}
+
+.containerPost {
+    max-width: 700px;
+    margin: 30px auto;
+
+}
