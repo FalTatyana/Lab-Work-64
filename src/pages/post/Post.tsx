@@ -31,6 +31,10 @@ const Post = () => {
 
   const navigate = useNavigate();
 
+  const deletePost = async () => {
+    await axiosApi.delete(`/posts/${id}.json`);
+    navigate('/');
+  };
 
 return post && (
   <div className='post container'>
@@ -51,7 +55,7 @@ return post && (
       </button>
       <button
         className='postBtn postBtnDelete'
-        onClick={() => navigate('/')}>
+        onClick={deletePost}>
         <i className="bi bi-trash3"></i> Delete post
       </button>
     </div>
