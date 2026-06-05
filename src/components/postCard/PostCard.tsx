@@ -19,7 +19,13 @@ const PostCard = () => {
                     id: key,
                     title: data[key].title,
                     message: data[key].message,
-                    date: new Date().toLocaleDateString('ru-RU')
+                    date: new Date().toLocaleString('ru-RU', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                      })
                 }
             });
             setPost(posts);

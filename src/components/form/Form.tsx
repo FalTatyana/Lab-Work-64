@@ -1,14 +1,16 @@
 import { type SubmitEvent } from 'react';
 import { useState, type ChangeEvent } from 'react'
 import './Form.css'
-import type { Post } from '../../type';
+import type { Post, PostApi } from '../../type';
 
 interface Props {
     onSubmit: (post: Post) => void;
+    existingPost?: PostApi;
+    isEdit?: boolean;
 }
 
-const Form = ({onSubmit}: Props) => {
-    const [form, setForm] = useState<Post>({
+const Form = ({ onSubmit, existingPost, isEdit = false }: Props) => {
+    const [form, setForm] = useState<Post>(existingPost ? existingPost : {
         title: '',
         message: ''
     });
@@ -45,7 +47,11 @@ const Form = ({onSubmit}: Props) => {
                 value={form.message}
             >
             </textarea>
-            <button type='submit' className='btnNewPostSave'>Publish post</button>
+            <button
+                type='submit'
+                className='btnNewPostSave'>
+                {isEdit ? "Edit post" : "Publish post"}
+            </button>
         </form>
     )
 };

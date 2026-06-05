@@ -7,6 +7,7 @@ import NewPost from './pages/newPost/NewPost'
 import About from './pages/about/About'
 import Contacts from './pages/contacts/Contacts'
 import Post from './pages/post/Post'
+import EditPost from './pages/editPost/EditPost'
 
 const App = () => {
   
@@ -19,6 +20,8 @@ const App = () => {
         <Route path='/about' element={<About />} />
         <Route path='/contacts' element={<Contacts />} />
         <Route path='/posts/:id' element={<Post />} />
+        <Route path='/posts/:id/edit' element={<EditPost/>}/>
+        <Route path='*' element={<h1>Page not found</h1>}/>
       </Routes>
     </>
   )
